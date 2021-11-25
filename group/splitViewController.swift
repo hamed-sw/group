@@ -15,6 +15,7 @@ class splitViewController: UIViewController {
     var texxt: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideNavigation()
         thelabel.text = texxt
         //navigationController?.setNavigationBarHidden(true, animated: true)
 
@@ -24,7 +25,14 @@ class splitViewController: UIViewController {
     func custoninti(context:Int) {
         self.context = context
     }
+    
+    func hideNavigation() {
+        NotificationCenter.default.addObserver(self, selector: #selector(hided), name: Notification.Name("hideNavigation"), object: nil)
+    }
 
+    @objc func hided() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     /*
     // MARK: - Navigation
 

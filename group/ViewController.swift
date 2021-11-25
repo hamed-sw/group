@@ -28,7 +28,15 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         register()
         barButton()
+        hideNavigation()
         // Do any additional setup after loading the view.
+    }
+    func hideNavigation() {
+        NotificationCenter.default.addObserver(self, selector: #selector(hided), name: Notification.Name("hideNavigation"), object: nil)
+    }
+
+    @objc func hided() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func dddaaa() {

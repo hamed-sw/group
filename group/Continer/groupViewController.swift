@@ -19,8 +19,15 @@ class groupViewController: UIViewController {
         tableview.dataSource  = self
         segmentt()
         register()
+        titleIs()
     }
     
+    func titleIs() {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            title = "Group"
+            navigationController?.navigationBar.backgroundColor = .systemGray
+        }
+    }
 
     @IBAction func tappedSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
@@ -69,6 +76,8 @@ extension groupViewController: UITableViewDelegate, UITableViewDataSource {
         vc.texxt = viewModel.groupAarry[indexPath.row]
         if (UIDevice.current.userInterfaceIdiom == .pad) {
             splitViewController?.showDetailViewController(vc, sender: nil)
+          
+
             
             
         } else if (UIDevice.current.userInterfaceIdiom == .phone) {

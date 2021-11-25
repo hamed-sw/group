@@ -38,6 +38,7 @@ class ContinerViewController: UIViewController {
     }
     @objc func gaToAZ(){
         if (UIDevice.current.userInterfaceIdiom == .pad) {
+            NotificationCenter.default.post(name: Notification.Name("hideNavigation"), object: nil)
             firstView.alpha = 0
             secondView.alpha = 1
             thirdView.alpha = 0
@@ -60,11 +61,13 @@ class ContinerViewController: UIViewController {
     }
     @objc func gaToGr(){
         if (UIDevice.current.userInterfaceIdiom == .pad) {
+            NotificationCenter.default.post(name: Notification.Name("hideNavigation"), object: nil)
         firstView.alpha = 0
         secondView.alpha = 0
         thirdView.alpha = 1
         fourthView.alpha = 0
         fifthview.alpha = 0
+           
         } else if (UIDevice.current.userInterfaceIdiom == .phone) {
             firstView.alpha = 0
             secondView.alpha = 0
@@ -95,11 +98,13 @@ class ContinerViewController: UIViewController {
     }
     @objc func azToGr(){
         if (UIDevice.current.userInterfaceIdiom == .pad) {
+            NotificationCenter.default.post(name: Notification.Name("hideNavigation"), object: nil)
         firstView.alpha = 0
         secondView.alpha = 0
         thirdView.alpha = 1
         fourthView.alpha = 0
         fifthview.alpha = 0
+            
         } else if (UIDevice.current.userInterfaceIdiom == .phone) {
             firstView.alpha = 0
             secondView.alpha = 0
@@ -117,11 +122,13 @@ class ContinerViewController: UIViewController {
     }
     @objc func grToAZ(){
         if (UIDevice.current.userInterfaceIdiom == .pad) {
+            NotificationCenter.default.post(name: Notification.Name("hideNavigation"), object: nil)
         firstView.alpha = 0
         secondView.alpha = 1
         thirdView.alpha = 0
         fourthView.alpha = 0
         fifthview.alpha = 0
+           
         } else if (UIDevice.current.userInterfaceIdiom == .phone) {
             firstView.alpha = 0
             secondView.alpha = 0

@@ -20,6 +20,13 @@ class AZlistViewController: UIViewController {
         tableView.dataSource = self
         segmentt()
          register()
+        titleIs()
+    }
+    func titleIs() {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            title = "AZList"
+            navigationController?.navigationBar.backgroundColor = .gray
+        }
     }
     
 
@@ -65,7 +72,9 @@ extension AZlistViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "splitViewController") as! splitViewController
         vc.texxt = viewModel.groupAarry[indexPath.row]
         if (UIDevice.current.userInterfaceIdiom == .pad) {
+
             splitViewController?.showDetailViewController(vc, sender: nil)
+          
             
             
         } else if (UIDevice.current.userInterfaceIdiom == .phone) {
